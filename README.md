@@ -6,8 +6,11 @@ RESTful highscore server:
 Requests:
 
 GET  -> show page
+
 POST -> Add new highscore entry
-		- JSON BODY:
+
+	- HTTP BODY (json):
+
 			{
 				"game": "MyGame",
 				"player": "MyPlayer",
