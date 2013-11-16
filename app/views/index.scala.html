@@ -1,7 +1,28 @@
-@(message: String)
+@(highscores: java.util.List[IHighscore])
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
+<table>
+	<tr>
+		<th>Game</th>
+		<th>Player</th>
+		<th>Score</th>
+	</tr>
+	@for(highscore <- highscores) {
+	<tr>
+		<td>@highscore.getGame()
+		</td>
+		<td>@highscore.getPlayer()
+		</td>
+		<td>@highscore.getScore()
+		</td>
+	</tr>
+	}
+</table>
+
 
 }
+
+
+
+
