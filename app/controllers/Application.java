@@ -18,6 +18,18 @@ public class Application extends Controller {
 	private static List<IHighscore> scoreList = new ArrayList<IHighscore>();
 
     public static Result index() {
+    	String[] games = {"Pixelwars", "CoD", "VierGewinnt", "CoD", "VierGewinnt"};
+    	String[] player = {"Ich", "Du", "Er", "Sie", "Es"};
+    	Long[] score = {1L, 0L, 500L, 100L, 1000L};
+    	
+    	for(int i = 0; i < games.length; i++) {
+    		IHighscore s = new Highscore();
+    		s.setGame(games[i]);
+    		s.setPlayer(player[i]);
+    		s.setScore(score[i]);
+    		scoreList.add(s);
+    	}
+    	
         return ok(index.render(scoreList));
     }
     
