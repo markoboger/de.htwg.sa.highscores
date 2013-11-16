@@ -22,17 +22,14 @@ public class Application extends Controller {
     }
     
     public static Result addHighscore() {
-    	System.out.println("REQUEST INCOMING");
     	IHighscore s = new Highscore();
     	try {
     		System.out.println(request().body().asJson());
 			s.deserializeJson(request().body().asJson());
 		} catch (HighscoreException e) {
-			System.err.println(e);
-    	      return badRequest(e.getMessage() + "\n" + e.getStackTrace());
+			return badRequest(e.getMessage() + "\n" + e.getStackTrace());
 		}
     	scoreList.add(s);
-    	System.out.println("An entry was added: " + s.getGame() + " " + s.getPlayer() + " " + s.getScore());
     	return ok(index.render(scoreList));
     }
 }
