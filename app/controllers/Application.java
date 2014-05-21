@@ -46,12 +46,12 @@ public class Application extends Controller {
 			return badRequest(e.getMessage() + "\n" + e.getStackTrace());
 		}
 
-		for (int i = 0; i < scoreList.size(); i++) {
-			if (scoreList.get(i).getScore() < s.getScore()) {
-				scoreList.add(i, s);
-				break;
-			}
-		}
+//		for (int i = 0; i < scoreList.size(); i++) {
+//			if (scoreList.get(i).getScore() < s.getScore()) {
+//				scoreList.add(i, s);
+//				break;
+//			}
+//		}
 		sortList();
 		return ok(index.render(scoreList));
 	}
