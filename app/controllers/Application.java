@@ -48,7 +48,7 @@ public class Application extends Controller {
 
 //		for (int i = 0; i < scoreList.size(); i++) {
 //			if (scoreList.get(i).getScore() < s.getScore()) {
-//				scoreList.add(i, s);
+				scoreList.add(i, s);
 //				break;
 //			}
 //		}
